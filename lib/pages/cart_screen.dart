@@ -10,12 +10,12 @@ class CartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.redAccent,
+        backgroundColor: Colors.blue,
         centerTitle: true,
-        title: const Text('Cart',
-          style: TextStyle(
-              color: Colors.white
-          ),),
+        title: const Text(
+          'Cart',
+          style: TextStyle(color: Colors.white),
+        ),
       ),
       body: Column(
         children: [
@@ -24,12 +24,12 @@ class CartScreen extends StatelessWidget {
           ),
           ElevatedButton(
             style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(Colors.redAccent),
-                foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                backgroundColor: WidgetStateProperty.all<Color>(Colors.blue),
+                foregroundColor: WidgetStateProperty.all<Color>(Colors.white),
+                shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ))),
+                  borderRadius: BorderRadius.circular(10.0),
+                ))),
             onPressed: () {
               Provider.of<CartProvider>(context, listen: false).clearCart();
             },
